@@ -1,0 +1,165 @@
+/* Global box-sizing to ensure padding and borders are included in width/height 
+Broadway
+In this project, you will use properties such as display and position to improve the layout of the landing page for a fictional design firm, Broadway Design.
+The site has some style rules to begin with. You will improve the layout and positioning of the navigation menu at the top of the page and the three supporting sections (Design, Develop, Deploy) below the image.
+If you get stuck during this project or would like to see an experienced developer work through it, click “Get Unstuck“ to see a project walkthrough video.*/
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+nav {
+  margin: 0;
+  padding: 20px 0;
+}
+
+nav li {
+  display: inline-block;      /* Makes the list items appear horizontally */
+  width: 80px;                /* Sets the width of each list item to 80px */
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  margin-right: 20px;         /* Adds space between list items */
+}
+
+main {
+  position: relative;
+  padding-top: 80px; /* Offsets the main content by 80px from the top */
+  text-align: center;
+}
+
+main h1 {
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 70px;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 0;
+}
+
+footer p {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.jumbotron {
+  height: 800px;
+  background-image: url("https://content.codecademy.com/projects/broadway/bg.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.btn-main {
+  background-color: #333;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1.3px;
+  padding: 16px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn-default {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;  
+  margin-bottom: 20px;      
+}
+
+.supporting {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: flex;              /* Use flexbox to align the columns horizontally */
+  justify-content: space-between; /* Space out the columns evenly */
+  flex-wrap: wrap;            /* Ensure they wrap on smaller screens */
+}
+
+.supporting .col {
+  width: 200px;              /* Set the width of each column to 200px */
+  height: 200px;             /* Set the height of each column to 200px */
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  padding: 10px;             /* Reduced padding to decrease internal spacing */
+  margin-bottom: 10px;       /* Reduced margin between rows */
+}
+
+.supporting img {
+  height: 32px;
+}
+
+.supporting h2 {
+  font-weight: 600;
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-bottom: 10px;       /* Reduced margin between title and paragraph */
+}
+
+.supporting p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 10px;           /* Reduced padding for text */
+  margin-bottom: 10px;       /* Reduced space between text and button */
+}
+
+.supporting a {
+  background-color: white;
+  color: #333333;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px 20px;         /* Reduced padding for buttons */
+  margin-bottom: 0;          /* Removed margin below buttons */
+  border: 2px solid #333333;
+}
+
+@media (max-width: 500px) {
+  main h1 {
+    font-size: 50px;
+    padding: 0 40px;
+  }
+
+  .supporting .col {
+    width: 100%; /* Stacks the columns vertically on smaller screens */
+  }
+}
